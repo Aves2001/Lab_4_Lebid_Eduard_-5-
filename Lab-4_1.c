@@ -17,8 +17,6 @@ printf("\r\nВведіть цілі числа: x, y та z.\r\n");
 	y = scanf_check_int ('y');
 	z = scanf_check_int ('z');
 
-	a = sqrt(pow(x,2)*y-z)+log2(x+y+z);
-
 	if (pow(x,2)*y-z < 0)
 	{
 		printf("Під квадратним коренем відємне число. Задайте інші значення\r\n");
@@ -32,6 +30,8 @@ printf("\r\nВведіть цілі числа: x, y та z.\r\n");
 				continue;
 			}
 }while(errors == 1);
+
+a = sqrt(pow(x,2)*y-z)+log2(x+y+z);
 
 printf("\r\nВідповідь: a = %.2lf\n", a);
 
