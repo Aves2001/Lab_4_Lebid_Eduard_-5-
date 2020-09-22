@@ -1,5 +1,5 @@
 #include <math.h>
-
+#include <conio.h>
 // char debug = 1;
 
 // x = scanf_check_int ('x');
@@ -9,6 +9,7 @@ int scanf_check_int (char printf_x)
 
 #define N 11
 #define limit_s N-2
+#define Error "[Error] "
 
 char error = 0;
 char s[N] = "0";
@@ -28,12 +29,12 @@ fflush(stdin);
 
 if (s[0] == '\n')
 {
-	printf("\r\nВведіть хоть щось будьласка\r\n");
+	printf("\r\n%sВведіть хоть щось будьласка\r\n", Error);
 	error = 1;
 	continue;
 } else	if (s[0] == '-' && s[1] == '\n')
 		{
-			printf("\r\nПросто мінус? Серйозно!?\r\n");
+			printf("\r\n%sПросто мінус? Серйозно!?\r\n", Error);
 			error = 1;
 			continue;
 		}
@@ -57,7 +58,7 @@ for (int i = 0; i < N; i++)
 
 	if (scan_sum > limit_s || scan_sum < -limit_s)
 	{
-		printf("\r\n\nУпс! Програма не розрахована на обчислення таких великих чисел\r\n");
+		printf("\r\n\n%sУпс! Програма не розрахована на обчислення таких великих чисел\r\n", Error);
 		error = 1;
 		continue;
 	}
@@ -67,7 +68,7 @@ for (int i = 0; i < N; i++)
 
 		if (s[i] == ' ')
 		{
-			printf("\r\nПробіл був лишнім введіть нормально будьласка!\r\n");
+			printf("\r\n%sПробіл був лишнім введіть нормально будьласка!\r\n", Error);
 			error = 1;
 			break;
 						//45 = -		//від 0 до 9		// не більше 1-го мінуса
@@ -77,7 +78,7 @@ for (int i = 0; i < N; i++)
 				
 				} else {
 						// printf("\r\ns[%d] = %d ---| не Добре |---", i, s[i]); //debug
-						printf("\r\nУвага! Ви ввели неправильне значення \"%c\"\r\n", printf_x);
+						printf("\r\n%sВи ввели неправильне значення \"%c\"\r\n", Error, printf_x);
 						error = 1;
 						break;
 
