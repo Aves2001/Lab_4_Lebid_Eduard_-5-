@@ -1,5 +1,5 @@
 #include <math.h>
-#include <conio.h>
+
 // char debug = 1;
 
 // x = scanf_check_int ('x');
